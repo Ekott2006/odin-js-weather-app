@@ -1,0 +1,192 @@
+body {
+  color: white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+}
+nav {
+  padding: 10px 2rem;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.651);
+  align-items: center;
+}
+nav > h2 {
+  font-size: 2rem;
+}
+.search-weather {
+  margin-left: auto;
+  margin-right: 5rem;
+  font-size: 1.5rem;
+}
+#search-input,
+#search-result {
+  width: 20rem;
+  border-radius: 10px;
+}
+#search-input {
+  background: inherit;
+  border: 1px solid white;
+  font-size: inherit;
+  color: white;
+  padding: 5px;
+}
+#search-result {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.651);
+}
+#search-result li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#search-result li:hover {
+  background-color: black;
+}
+#search-result p {
+  font-weight: bold;
+  display: inline;
+}
+.temp-switch {
+  font-size: 2rem;
+}
+.temp-switch span {
+  cursor: pointer;
+  padding: 3px;
+}
+.temp-switch span.selected {
+  background: white;
+  color: black;
+  border-radius: 10px;
+}
+
+main {
+  padding: 2rem;
+}
+
+main h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+main h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+#alert{
+  background: red;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 1rem;
+  font-size: 1.5rem;
+}
+.content > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+.content li {
+  display: flex;
+  align-items: center;
+}
+.card li {
+  margin: 10px;
+  gap:1rem;
+}
+.content li > img {
+  margin: 0 20px;
+}
+.card {
+  border-radius: 10px;
+  border: 1px solid white;
+  width: fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+}
+.card h3 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+.card b {
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .content {
+    display: block;
+  }
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.toggleContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #343434;
+  border-radius: 20px;
+  background: #343434;
+  font-weight: bold;
+  color: #343434;
+  cursor: pointer;
+}
+.toggleContainer::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius:20px;
+  background: white;
+  transition: all 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer::before {
+  left: 50%;
+}
+.toggleContainer div {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+.toggleCheckbox {
+  display: none;
+}
+.toggleCheckbox:checked + .toggleContainer div:first-child{
+  color: white;
+  transition: color 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child{
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:first-child{
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:last-child{
+  color: white;
+  transition: color 0.3s;
+}
