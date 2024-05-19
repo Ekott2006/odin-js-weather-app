@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Odin Weather App</title>
+<script defer src="main.js"></script></head>
+<body>
+<header>
+    <nav>
+        <h2>Weather App</h2>
+        <div class="search-weather">
+            <input type="search" name="" id="search-input" placeholder="Enter a City Here"/>
+            <ul id="search-result"></ul>
+        </div>
+        <!-- TODO: Add CheckBox -->
+        <div class="celsius-to-f">
+            <input type="checkbox" id="toggle" class="toggleCheckbox"/>
+            <label for="toggle" class='toggleContainer'>
+                <div>°F</div>
+                <div>°C</div>
+            </label>
+        </div>
+    </nav>
+</header>
+<main>
+    <h2 id="alert" style="display: none"></h2>
+    <div class="loader" id="loader" style="display: none;"></div>
+    <div class="heading">
+        <h1 id="location"></h1>
+        <h2 id="temp"></h2>
+    </div>
+    <div class="content">
+        <ul id="temp-result"></ul>
+        <div id="fun-facts"></div>
+    </div>
+</main>
+</body>
+</html>
